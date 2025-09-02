@@ -24,5 +24,18 @@ we can also logically combine multiple logical conditions by useing logical oper
 ```
 `%` means any number of characters<br> 
 `_` specifies the number of characters
-
-
+## GROUP BY
+```sql
+  SELECT occupation, gender, AVG(salary), MIN(salary), MAX(salary)
+  FROM employees GROUP BY occupation, gender;
+```
+If a `SELECT` statement includes columns that are not part of the `GROUP BY` clause, those columns must be used within an aggregate function
+## ORDER BY
+```sql
+  SELECT * FROM employees ORDER BY name;
+```
+we can also specify `ASC` for ascending or `DESC` for descending
+```sql
+  SELECT * FROM employees ORDER BY gender, age DESC;
+```
+nultiple field based sorting here all females are listed first in descending order of age
