@@ -104,3 +104,13 @@ The fields selected in UNION queries should always be same to avoid discrepancie
 8. CONCAT
    > will take 3 argst `(str1, sep, str2)` , will concatinate `str1` and `str2` seperated by `sep`.<br>
    > the seperator argument is **optional**
+## CASE 
+```sql
+  SELECT name, salary
+  CASE
+  WHEN salary < 50000 THEN salary * 1.05
+  WHEN salary BETWEEN 50000 AND 70000 THEN salary * 1.07
+  when salary > 70000 THEN salary * 1.10 
+  END AS new_salary
+  FROM employee;
+```
