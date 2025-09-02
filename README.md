@@ -12,3 +12,17 @@ we can also use multiple funtion/operations here like `DISTINCT`, `LIMIT`
 ```sql
   SELECT name, salary, (salary+10)*2 FROM employees;
 ```
+## WHERE
+```sql
+  SELECT * FROM {table} WHERE {Condition};
+```
+we can also logically combine multiple logical conditions by useing logical operations like `AND`, `OR`, `NOT`
+## LIKE
+> the `LIKE` statement is used to look for some sequence in targeted field
+```sql
+  SELECT name, salary FROM employees WHERE name LIKE 'A%';
+```
+`%` means any number of characters<br> 
+`_` specifies the number of characters
+
+
