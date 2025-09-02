@@ -34,6 +34,11 @@ If a `SELECT` statement includes columns that are not part of the `GROUP BY` cla
 ```sql
   SELECT * FROM employees ORDER BY name;
 ```
+we can also specify `ASC` for ascending or `DESC` for descending
+```sql
+  SELECT * FROM employees ORDER BY gender, age DESC;
+```
+nultiple field based sorting. Here all females are listed first in descending order of age
 ## HAVING 
 It is very similar to `WHERE` caluse just that it works at column level 
 ```sql
@@ -46,8 +51,3 @@ It is very similar to `WHERE` caluse just that it works at column level
 > The `WHERE` will work before `GROUP BY` and shrink the overall selection and hence cant be used on aggregate functions<br>
 > On the other hand `HAVING` will work after grouping filtering based on aggregate functions
 
-we can also specify `ASC` for ascending or `DESC` for descending
-```sql
-  SELECT * FROM employees ORDER BY gender, age DESC;
-```
-nultiple field based sorting here all females are listed first in descending order of age
