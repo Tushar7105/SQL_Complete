@@ -85,3 +85,22 @@ It is very similar to `WHERE` caluse just that it works at column level
 ```
 Union is used to merge the result of 2 queries **by default only unique** values are returned in union<br>
 The fields selected in UNION queries should always be same to avoid discrepancies.
+
+## STRING functions
+1. LENGTH
+   > LENGTH(str) will return length of str.
+2. UPPER and LOWER
+   > will return string in all uppercase / lowercase
+3. TRIM
+   > will trim the wide spaces from left and right of string. `LTRIM` for left trim and `RTRIM` for right trim.
+4. LEFT and RIGHT
+   > will accept 2 args `(str, size)` will return prefi/suffix of str of length `size`.
+5. SUBSTRING
+   > will take 3 args `(str, pos, len)`
+6. REPLACE
+   > will accept 3 arg `(str, seq1, seq2)` , will replace all occurance of `seq1` with `seq2`.
+7. LOCATE
+   > will accept 2 args `(seq, str)` , will locate the occurance of `seq` in `str`.
+8. CONCAT
+   > will take 3 argst `(str1, sep, str2)` , will concatinate `str1` and `str2` seperated by `sep`.<br>
+   > the seperator argument is **optional**
