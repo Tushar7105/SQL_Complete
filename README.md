@@ -75,4 +75,13 @@ It is very similar to `WHERE` caluse just that it works at column level
     ON em.employeeId = ed.employeeId
 ```
 `RIGHT JOIN` will join the tables based on the key specified and the merged result will only contain for all key values present in right table<br>
-> If there is no corresponding value in left table then those field will be marked null but shown in the result 
+> If there is no corresponding value in left table then those field will be marked null but shown in the result
+
+## UNION
+```sql
+  SELECT name, age, "OLD" as label FROM employee WHERE age >= 55
+  UNION
+  SELECT name, age, "FEMALE" as label FROM employee WHERE age < 55 AND gender="FEMALE"
+```
+Union is used to merge the result of 2 queries **by default only unique** values are returned in union<br>
+The fields selected in UNION queries should always be same to avoid discrepancies.
