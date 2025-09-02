@@ -51,3 +51,28 @@ It is very similar to `WHERE` caluse just that it works at column level
 > The `WHERE` will work before `GROUP BY` and shrink the overall selection and hence cant be used on aggregate functions<br>
 > On the other hand `HAVING` will work after grouping filtering based on aggregate functions
 
+## JOINS
+### INNER JOIN
+```sql
+  SELECT * FROM employees AS em
+  INNER JOIN employee_details AS ed
+    ON em.employeeId = ed.employeeId
+```
+`INNER JOIN` will join the tables based on the key specified and the merged result will only contain for key values present in both the tables
+
+### LEFT OUTER JOIN
+```sql
+  SELECT * FROM employees AS em
+  LEFT JOIN employee_details AS ed
+    ON em.employeeId = ed.employeeId
+```
+`LEFT JOIN` will join the tables based on the key specified and the merged result will only contain for all key values present in left table<br>
+> If there is no corresponding value in right table then those field will be marked null but shown in the result
+### RIGTH OUTER JOIN
+```sql
+  SELECT * FROM employees AS em
+  RIGHT JOIN employee_details AS ed
+    ON em.employeeId = ed.employeeId
+```
+`RIGHT JOIN` will join the tables based on the key specified and the merged result will only contain for all key values present in right table<br>
+> If there is no corresponding value in left table then those field will be marked null but shown in the result 
