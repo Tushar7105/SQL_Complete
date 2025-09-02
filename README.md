@@ -34,6 +34,18 @@ If a `SELECT` statement includes columns that are not part of the `GROUP BY` cla
 ```sql
   SELECT * FROM employees ORDER BY name;
 ```
+## HAVING 
+It is very similar to `WHERE` caluse just that it works at column level 
+```sql
+  SELECT occupation, AVG(salary)
+  FROM employees
+  WHERE occupation LIKE '%manager%'
+  GROUP BY occupation
+  HAVING AVG(salary) > 50000;
+```
+> The `WHERE` will work before `GROUP BY` and shrink the overall selection and hence cant be used on aggregate functions<br>
+> On the other hand `HAVING` will work after grouping filtering based on aggregate functions
+
 we can also specify `ASC` for ascending or `DESC` for descending
 ```sql
   SELECT * FROM employees ORDER BY gender, age DESC;
